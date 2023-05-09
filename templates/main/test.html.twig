@@ -1,15 +1,49 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Test</title>
-</head>
-<body>
+{%  extends 'base.html.twig' %}
+
+
+{%  block body %}
 
 <h1>Test !</h1>
 
-</body>
-</html>
+{# creation d'une variable #}
+{%  set name = "Max" %}
+{# affichage d'une varable #}
+<h2>{{  name }}</h2>
+
+{# creation d'un tableau #}
+{% set colors = ['blue', 'pink', 'purple', 'green'] %}
+
+{% for color in colors %}
+    {%  if loop.first  %}
+        <p>Premiere iteration</p>
+    {% endif %}
+
+    <div style="background-color:{{ color }}">{{ color }}</div>
+    <div>position de l'element {{ loop.index }}/{{ loop.length }}</div>
+
+{% endfor %}
+
+{# manipulation d'objet #}
+{%
+    set serie = {
+    title : "Breaking Bad",
+    year : 2008
+}
+%}
+
+<h3>Title : {{ serie.title }}</h3>
+
+{% for val in serie %}
+    <p>{{ val }}</p>
+{% endfor %}
+
+
+
+{# quelques filtres ! #}
+
+<h3>Filtres</h3>
+<div>{{ name | upper }} : {{ name | length }} lettres</div>
+<div>Colors : {{  colors | join('-') }}</div>
+<div>{{ "now" | date('Y-m-d') }}</div>
+
+{% endblock %}
