@@ -1,7 +1,13 @@
 <!doctype html>
 <html lang="en">
-<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+
 <head>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/normalize.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Kannada:wght@300&family=Yesteryear&display=swap" rel="stylesheet">
+    <link rel="icon" href="{{ asset('img/icon.png') }}">
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -9,17 +15,25 @@
     <title>{% block title %} Series ! {% endblock %}</title>
 </head>
 <body>
+ <div class="container">
     <header>
+        <span> <a href="{{ path('main_home') }}"><img src="{{ asset('img/logo.svg') }}" alt="logo principal series"> </a></span>
         {{ include('menu/nav.html.twig') }}
+        
     </header>
+
+
+
     <main>
-        {% block body  %}{% endblock %}
+                {% block body  %}{% endblock %}
+        
     </main>
 
 
     <footer>
         {{ include('menu/nav.html.twig') }}
+        &copy; MonBauf {{ "now" | date }}
     </footer>
-
+ </div>
 </body>
 </html>

@@ -1,12 +1,10 @@
-
-body{
-    font-family: 'Anek Kannada', sans-serif;
-    background: linear-gradient(#132135,#000000);
+body {
+    background: linear-gradient(#000000, #132135);
     background-attachment: fixed;
     background-position: center center;
     background-size: cover;
     color: #EEE;
-
+    font-family: 'Roboto', serif;
 }
 
 .flex_div{
@@ -159,4 +157,3 @@ textarea{
 .seasons{
     margin-top: 15px;
 }
-
