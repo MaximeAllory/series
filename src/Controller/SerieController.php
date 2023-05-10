@@ -26,6 +26,23 @@ class SerieController extends AbstractController
     public function add(): Response
     {
         //TODO renvoyer un form pour créer une nouvelle série
+
+        $serie = new Serie();
+        $serie
+            ->setBackdrop("backdrop.png")
+            ->setDateCreated(new \dateTime())
+            ->setGenres("Thriller/Drama")
+            -> setName("Utopia")
+            ->setFirstAirDate(new \DateTime("-2 year"))
+            ->setLastAirDate(new \DateTime("-2 month"))
+            ->setPopularity(500)
+            ->setPoster("poster.png")
+            ->setStatus("canceled")
+            ->setTmbdId(123456)
+            ->setVote(5);
+
+
+
         return $this->render('serie/add.html.twig');
     }
 }
