@@ -15,6 +15,10 @@
     <title>{% block title %} Series ! {% endblock %}</title>
 </head>
 <body>
+
+{% block extraStyle %}{% endblock %}
+
+
  <div class="container">
     <header>
         <span> <a href="{{ path('main_home') }}"><img src="{{ asset('img/logo.svg') }}" alt="logo principal series"> </a></span>
